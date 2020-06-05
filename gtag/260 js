@@ -1,0 +1,17 @@
+<script type='text/javascript'>
+//<![CDATA[
+
+/**
+ * jQuery Mobile Menu 
+ * Turn unordered list menu into dropdown select menu
+ * version 1.0(31-OCT-2011)
+ * 
+ * Built on top of the jQuery library
+ *   http://jquery.com
+ * 
+ * Documentation
+ * 	 http://github.com/mambows/mobilemenu
+ */
+!function(t){t.fn.mobileMenu=function(s){var n=t.extend({defaultText:"Navigate to...",className:"select-menu",containerClass:"select-menu-container",subMenuClass:"sub-menu",subMenuDash:"&ndash;"},s),e=t(this);return this.each(function(){e.find("ul").addClass(n.subMenuClass),t("<div />",{class:n.containerClass}).insertAfter(e),t("<select />",{class:n.className}).appendTo("."+n.containerClass),t("<option />",{value:"#",text:n.defaultText}).appendTo("."+n.className),e.find("a").each(function(){var s=t(this),e="&nbsp;"+s.text(),a=s.parents("."+n.subMenuClass).length;s.parents("ul").hasClass(n.subMenuClass)&&(e=Array(a+1).join(n.subMenuDash)+e),t("<option />",{value:this.href,html:e,selected:this.href==window.location.href}).appendTo("."+n.className)}),t("."+n.className).change(function(){"#"!==t(this).val()&&(window.location.href=t(this).val())})}),this}}(jQuery);
+//]]>
+</script>
