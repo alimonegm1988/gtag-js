@@ -1,0 +1,6 @@
+<script type='text/javascript'>
+//<![CDATA[
+
+!function(h){h.fn.hoverIntent=function(t,e){function r(t){o=t.pageX,i=t.pageY}function n(t){for(var e=("mouseover"==t.type?t.fromElement:t.toElement)||t.relatedTarget;e&&e!=this;)try{e=e.parentNode}catch(t){e=this}if(e==this)return!1;var n=jQuery.extend({},t),o=this;o.hoverIntent_t&&(o.hoverIntent_t=clearTimeout(o.hoverIntent_t)),"mouseover"==t.type?(u=n.pageX,v=n.pageY,h(o).bind("mousemove",r),1!=o.hoverIntent_s&&(o.hoverIntent_t=setTimeout(function(){a(n,o)},s.interval))):(h(o).unbind("mousemove",r),1==o.hoverIntent_s&&(o.hoverIntent_t=setTimeout(function(){var t,e;t=n,(e=o).hoverIntent_t=clearTimeout(e.hoverIntent_t),e.hoverIntent_s=0,s.out.apply(e,[t])},s.timeout)))}var o,i,u,v,s={sensitivity:7,interval:100,timeout:0},s=h.extend(s,e?{over:t,out:e}:t),a=function(t,e){if(e.hoverIntent_t=clearTimeout(e.hoverIntent_t),Math.abs(u-o)+Math.abs(v-i)<s.sensitivity)return h(e).unbind("mousemove",r),e.hoverIntent_s=1,s.over.apply(e,[t]);u=o,v=i,e.hoverIntent_t=setTimeout(function(){a(t,e)},s.interval)};return this.mouseover(n).mouseout(n)}}(jQuery);
+//]]>
+</script>
